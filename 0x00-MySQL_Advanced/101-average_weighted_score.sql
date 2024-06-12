@@ -1,8 +1,8 @@
 -- Write sql script
 
-DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUser;
+DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUsers;
 DELIMITER $$
-CREATE PROCEDURE ComputeAverageWeightedScoreForUser()
+CREATE PROCEDURE ComputeAverageWeightedScoreForUsers()
 BEGIN
 	UPDATE users AS users,
 	       (SELECT users.id, SUM(score * weight) / SUM(weight) AS weight_avg
