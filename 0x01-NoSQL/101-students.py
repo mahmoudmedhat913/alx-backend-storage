@@ -6,14 +6,14 @@ from pymongo import MongoClient
 def top_students(mongo_collection):
     """return all students sorted"""
     pipeline = mongo_collection.aggregate([
-    {
-        "$group": {
-            "_id": None,
-            "averageScore": {"$avg": "$score"}
+        {
+            "$group": {
+                "name": "$name",
+            "averageScore": {"$avg": "$topics.score"}
+            }
+        },
+        {
+            "$sort": {"averageScore": -1}
         }
-    },
-    {
-        '$sort': {'averageScore': -1}
-    }
-])
+    ])
     return pipeline
