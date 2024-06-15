@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """python function"""
-from pymongo import MongoClient
 
 
 def top_students(mongo_collection):
     """return all students sorted"""
-    pipeline = mongo_collection.aggregate([
+    top_student = mongo_collection.aggregate([
         {
-            "$group": {
+            "$project": {
                 "name": "$name",
             "averageScore": {"$avg": "$topics.score"}
             }
@@ -16,4 +15,5 @@ def top_students(mongo_collection):
             "$sort": {"averageScore": -1}
         }
     ])
-    return pipeline
+
+    return top_student
