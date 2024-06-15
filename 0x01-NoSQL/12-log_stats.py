@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 """module list nginx stats"""
+
 from typing import List
 from pymongo import MongoClient
 
