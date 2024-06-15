@@ -3,7 +3,6 @@
 from typing import List
 from pymongo import MongoClient
 
-
 if __name__ == "__main__":
     # Establish connection
     client: MongoClient = MongoClient(host="localhost", port=27017)
