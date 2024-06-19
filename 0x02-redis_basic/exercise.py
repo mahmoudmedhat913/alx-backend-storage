@@ -58,6 +58,7 @@ def replay(fn: Callable) -> None:
             fxn_output,
         ))
 
+
 class Cache:
     '''represent an object'''
 
