@@ -62,7 +62,7 @@ class Cache:
     '''represent an object'''
 
     def __init__(self) -> None:
-        self.redis = redis.Redis()
+        self._redis = redis.Redis()
         self._redis.flushdb(True)
 
     @call_history
