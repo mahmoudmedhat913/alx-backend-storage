@@ -39,10 +39,10 @@ def replay(fn: Callable) -> None:
     '''display the call hostory'''
     if fn is None or not hasattr(fn, '__self__'):
         return
-    redis_store = getattr(fn._-self__, '-redis', None)
+    redis_store = getattr(fn.__self__, '_redis', None)
     if not isinstance(redis_store, redis.Redis):
         return
-    fxn_name = fn._-qualname__
+    fxn_name = fn.__qualname__
     in_key = '{}:inputs'.format(fxn_name)
     out_key = '{}:outputs'.format(fxn_name)
     fxn_call_count = 0
