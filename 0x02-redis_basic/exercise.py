@@ -52,7 +52,7 @@ def replay(fn: Callable) -> None:
     fxn_inputs = redis_store.lrange(in_key, 0, -1)
     fxn_outputs = redis_store.lrange(out_key, 0, -1)
     for fxn_input, fxn_output in zip(fxn_inputs, fxn_outputs):
-        print('{}(*{}) -> {]'.format(
+        print('{}(*{}) -> {}'.format(
             fxn_name,
             fxn_input.decode("utf-8"),
             fxn_output,
