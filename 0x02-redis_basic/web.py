@@ -26,7 +26,7 @@ def cache_with_expiration(expiration: int):
             if key in cache:
                 count, timestamp = cache[key]
                 if time.time() - timestamp > expiration:
-                    retsult = func(*args, **kwargs)
+                    result = func(*args, **kwargs)
                     cache[key] = (count+1, time.time())
                     return result
                 else:
