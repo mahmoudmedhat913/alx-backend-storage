@@ -77,7 +77,7 @@ class Cache:
             self,
             key: str,
             fn: Callable = None,
-            ) -> Union[[str, bytes, int, float]:
+            ) -> Union[str, bytes, int, float]:
         '''retrieve value from redis'''
         data = self._redis.get(key)
         return fn(data) if fn is not None else data
