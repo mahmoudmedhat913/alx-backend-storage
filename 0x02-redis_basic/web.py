@@ -5,7 +5,9 @@ import time
 from functools import wraps
 from typing import Dict
 
+
 cache: Dict[str, str] = {}
+
 
 def get_page(url: str) -> str:
     '''get function'''
